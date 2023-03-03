@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Creating an Developer IAM User
+
+Resources:
+  
+  mydeveloperUser:
+    Type: AWS::IAM::User
+    Properties: 
+      Groups: 
+        - testgroupA
+      LoginProfile: 
+          Password: pA$$w0Rd
+          PasswordResetRequired: true
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/AmazonEC2FullAccess
+      Path: /
+      UserName: developer
+      
+        
